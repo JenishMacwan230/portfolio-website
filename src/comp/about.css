@@ -11,7 +11,7 @@
     margin : 5% 5% 5% 0;
     height: 80%;
     width: 25%;
-    background: url("D:\WebDev\react\portfolio\p-app\public\me.jpeg");
+    background: url("/public/me.jpeg");
     /* background: #0D1117; */
     border-radius: 5px;
    border: 1px solid #22d3ee81;
