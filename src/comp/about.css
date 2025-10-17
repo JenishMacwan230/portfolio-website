@@ -1,0 +1,111 @@
+#about .left{
+    margin: 5%;
+     width: 60%;;
+     height: 80%;
+     /* border: 1px solid white; */
+     border-radius: 10px;
+      /* background: #0D1117; */
+}
+
+#about .right{
+    margin : 5% 5% 5% 0;
+    height: 80%;
+    width: 25%;
+    background: url("D:\WebDev\react\portfolio\p-app\public\me.jpeg");
+    /* background: #0D1117; */
+    border-radius: 5px;
+   border: 1px solid #22d3ee81;
+    background-size: cover;
+}
+
+.headbutton{
+    display: flex;
+    flex-wrap: wrap;
+    height: 10%;
+   justify-content: space-between;
+    /* background-color:  #161B22; */
+    button{
+        i{
+            margin-right: 5%;
+        }
+        align-items: center;
+        width: 49%;
+        border-radius: 5px;
+        color: rgba(198, 243, 238, 0.818);
+        font-size: 1.2rem;
+        font-weight: 500;
+        background-color:  #0D1117;
+        border: 1px solid #22d3ee81;
+        cursor: pointer;
+    }
+}
+
+#about .active {
+    background: linear-gradient(135deg, #22D3EE, #b513a0);
+    border: none;
+    color: #0D1117;
+    /* font-weight: 900; */
+}
+
+.content{
+    margin-top: 2%;
+    /* padding: % 0 0 15px; */
+    height: 85%;
+    background-color: #0D1117;;
+    border-radius: 5px ;
+    border: 1px solid #22d3ee81;
+    color: white;
+
+    h1{
+        margin: 2% 0 0 5%;
+
+        font-size: 2.5rem;
+    }
+
+    h2{
+         margin: 1% 0 0 5%;
+
+    }
+    h3{
+         margin: 1% 0 0 5%;
+    }
+    p{
+       margin: 1% 0 0 5%;
+        font-weight: 500;
+        color:  white;
+    }
+    a{
+        color: rgb(135, 213, 247); ;
+    }
+}
+
+
+ul{
+    margin-top: 5vh;
+    justify-content: center;
+}
+
+#about li{
+    display: flex;
+    height: 5vh;
+    width: 10vw;
+    /* background-color: #E5E7EB; */
+    font-size: 1rem;
+    font-weight: 500;
+    list-style-type: none;
+    border-radius: 5px;
+    border: 1px solid  rgba(34, 211, 238, 0.745);
+    justify-content: center;
+    align-items: center;
+    
+}
+#about li:hover{
+    background: linear-gradient(135deg, #22D3EE, #b513a0);
+    font-weight: 700;
+    cursor:  pointer ;
+    border: none;
+    a{
+       color: #161B22; 
+    }
+}
+

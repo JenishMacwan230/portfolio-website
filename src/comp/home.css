@@ -1,0 +1,122 @@
+
+section {
+    padding-top: 12%;
+    width: 100%;
+    min-height: 70vh;
+    /* max-height: 80vh; */
+    display: flex;
+    justify-content: center;
+    background-color: #161B22;
+
+}
+
+.main {
+    /* margin-top: 30vmin; */
+    display: flex;
+    height: 65vh;
+    width: 85vw;
+    border-radius: 10px;
+    border: 1px solid rgb(34, 211, 238, .3);
+    align-items: center;
+}
+
+
+
+#home .left {
+  margin-left: 5%;
+  margin-right: 8%;
+  display: inline-block;
+  border-radius: 50%; 
+  padding: 2vmin;     /* border thickness */
+  background: #161B22;  /* default background (no gradient) */
+  transition: background 0.8s ease;
+}
+
+#home .left:hover {
+  background: linear-gradient(135deg, #22D3EE, #b513a0);
+}
+
+#home .left img {
+  display: block;
+  height: 50vmin;
+  width: 50vmin;
+  object-fit: cover;
+  border-radius: 50%; 
+  background: #161B22;
+}
+
+
+#home .right {
+  
+    display: block;
+    height: 55vmin;
+    width: 85vmin;
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #E5E7EB ;
+    /* background-color: pink; */
+}
+
+
+.name{
+   
+    font-size: 5rem;
+    font-weight: 700;
+      background: linear-gradient(135deg, #22D3EE, #b513a0);
+  -webkit-background-clip: text; /* for Safari and Chrome */
+  -webkit-text-fill-color: transparent; /* makes the text show the gradient */
+  background-clip: text; /* for other browsers that support it */
+  color: transparent; /* fallback */
+}
+
+#home .right span{
+    font-size: 3rem;
+}
+
+#home .right .line{
+    margin-top: 1vh;;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+ul{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+#home li{
+    display: flex;
+    height: 5vh;
+    width: 10vw;
+    /* background-color: #E5E7EB; */
+    font-size: 1rem;
+    font-weight: 500;
+    list-style-type: none;
+    border-radius: 5px;
+    border: 1px solid  rgba(34, 211, 238, 0.745);
+    justify-content: center;
+    align-items: center;
+    
+}
+#home li:hover{
+    background: linear-gradient(135deg, #22D3EE, #b513a0);
+    font-weight: 700;
+    cursor:  pointer ;
+    border: none;
+    a{
+       color: #161B22; 
+    }
+}
+a{ 
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+

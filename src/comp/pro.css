@@ -1,0 +1,105 @@
+
+#projects {
+    margin-top: 5%;
+    padding-top: 8%;
+   
+}
+
+
+#pm2{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+    min-height: 65vh;
+    /* background-color: yellow; */
+    /* border: 1px solid orange; */
+    justify-content: space-evenly;
+
+   
+}
+
+
+.temp{
+   position: relative;
+   
+   margin: 10px;
+   margin-bottom: 20px;
+    width: 30%;
+    height: 63vh;
+    border-radius: 10px;
+     border: 1px solid rgba(34, 211, 238, 0.3);
+    background-color: #0d1117fd;
+}
+
+.imgp{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    aspect-ratio: 16/8;
+    background-size: cover;
+    /* background-color: blue; */
+}
+h2{
+    margin-left: 20px;
+}
+
+.temp p{
+      
+    margin: 15px;
+    color: white;
+    margin-left: 20px;
+      margin-top: 25px;
+}
+
+.temp ul{
+
+    margin: 15px;
+    margin-left: 20px;
+    list-style: none;
+   
+}
+
+.tech {
+     justify-content: left;
+    li{
+        font-size: .9rem;
+       
+           background: linear-gradient(135deg, #b11c9dcc 0%, #ffffff 50%, #b11c9dcc 100%) !important;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+}
+
+.live {
+    position: absolute;
+   
+     bottom: 0;
+    li{
+        
+        font-size: 1.2rem;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #22D3EE 0%, #ffffff 50%, #22D3EE 100%) ;
+        margin-left: 35px;
+       
+    }
+    a{
+         color: black;
+    }
+
+}
+
+#tictac{
+    .imgp{
+        background-image: url(/public/tictactoe.png);
+        
+    }
+}

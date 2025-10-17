@@ -1,0 +1,114 @@
+footer{
+    margin-top: 10%;
+    
+}
+
+#foot{
+    width: 100%;
+    height: 40vh;
+    /* border: 1px solid rgba(34, 211, 238, 0.3); */
+    border-top: 1px solid rgba(34, 211, 238, 0.3);
+    border-bottom:1px  solid rgba(34, 211, 238, 0.3);
+    /* background-color: aqua; */
+}
+
+#foot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #0d1117fd;
+}
+
+#foot ul{
+    margin-top: 5%;
+    display: flex;
+    height: 60%;
+    /* background-color: pink; */
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#foot .first{
+    color: white;
+    h1{
+        margin-left: 20px;
+        color: rgba(255, 255, 255, 0.722);
+    }
+    .ic{
+        width: 40%;
+         margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    a{  
+        margin-top: 15px;
+        display: flex;
+        width: 25%;
+        aspect-ratio: 1;
+        font-size: 1rem;
+        justify-content: center;
+        align-items: center;
+        border-radius:50% ;
+        border: 1px solid rgba(255, 255, 255, 0.568);
+    }
+
+}    
+
+#foot .first  .ic  i:hover{
+        cursor:pointer;
+         font-size: 1.5rem;
+         padding : 6px;
+    }
+
+
+    #foot .second{
+        h2{
+            margin-left: 0;
+        }
+        li a{
+            color: rgba(255, 255, 255, 0.534);
+        }
+        li :hover{
+            
+            color: white;
+            margin-left: 5px;
+            font-size: 1.1rem;
+        }
+    }
+
+#foot .third{
+    h2{
+        margin-left:0 ;
+    }
+    ul{
+       color: rgba(255, 255, 255, 0.534);
+       a{
+          color: rgba(255, 255, 255, 0.534);
+       }
+       height: 30%;
+    }
+   
+    i{
+        color: white;
+        margin-right: 15px;
+    }
+     li :hover{
+            
+            color: white;
+        
+        }
+}
+
+.cr{
+    padding: 15px;
+    display: flex;
+    color: white;
+    font-size: .9rem;
+    justify-content: center;
+    i{
+        margin-top: 5px;
+        margin-right: 15px;
+    }
+    
+}

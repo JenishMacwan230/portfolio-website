@@ -1,0 +1,99 @@
+#education{
+    margin-top: 7%;
+   padding-top: 8%;
+   justify-content: center;
+   
+}
+
+.m2{
+    min-height: 80vh;
+    width: 85vmax;
+    padding: auto;
+    border-radius: 10px;
+     border: 1px solid rgba(34, 211, 238, 0.3);
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+}
+.head{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    
+    h1{
+          background: linear-gradient(135deg, #22D3EE, #be85b6);
+  -webkit-background-clip: text; /* for Safari and Chrome */
+  -webkit-text-fill-color: transparent; /* makes the text show the gradient */
+  background-clip: text; /* for other browsers that support it */
+  color: transparent; /* fallback */
+    }
+    
+}
+
+.clg{
+    width: 43%;
+   
+    border-radius: 10px;
+   border: 1px solid #22d3ee81;
+}
+
+
+#edu{
+
+    /* width: 100%; */
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+     #c{
+            background-image: url('../../public/clg.jpg');
+        }
+         #s{
+            background-image: url('../../public/scl2.jpg');
+        }
+    .img{
+        
+        display: flex;
+        height: 23vh;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+       
+
+        img{
+            height: 65%;
+           aspect-ratio: 1;
+           background-color: rgb(255, 255, 255);
+           border-radius: 50%;
+        }
+    }
+}
+
+/* h1{
+
+} */
+
+h2{
+    margin: 15px;
+    /* margin-bottom: 5px; */
+    color: #22D3EE;
+    font-size: 1.6rem;
+}
+
+h3{
+
+    margin-left: 15px;
+    color: white;
+}
+
+.des{
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    color: white;
+}
+

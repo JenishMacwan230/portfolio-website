@@ -1,0 +1,120 @@
+#contact{
+    padding-top: 8%;
+}
+
+#contact .main{
+    margin-top: 2%;
+    margin-left:5% ;
+    width: 90%;
+    justify-content: space-between;
+    border: none;
+}
+
+#contact .left{
+    border-radius: 5px;
+    height: 60vh;
+    width: 35%;
+    background-color: #0d1117fd;
+    color: white;
+      border: 1px solid #22d3ee81;
+    div{
+        margin: 20px ;
+    }
+    h2{
+         font-size: 2rem;
+    font-weight: 500;
+    }
+   
+    i{
+        margin-left: 20px;
+        margin-right: 20px;
+        color: #22D3EE;
+        font-size: 1.2rem;
+    }
+    a{
+ color: white;
+    }
+   
+}
+
+#contact .right{
+
+    border-radius: 5px;
+    height: 60vh;
+    width: 60%;
+    background-color: #0d1117fd;
+    border: 1px solid #22d3ee81;
+  
+     #btn i {
+            color: #0d1117fd;;
+         }
+
+    form {
+  
+    display: flex;               
+    flex-direction: column;      
+    align-items: center;   
+    justify-content: space-evenly;     
+    gap: 15px;                 
+    width: 100%;    
+    height: 100%;            
+ 
+
+}
+
+
+    div{
+       
+        width: 90%;
+        padding: 5px;
+        border-radius: 5px;
+         border: 1px solid #22d3ee81;
+         display: flex;
+         justify-content: space-evenly;
+         i{
+            font-size: 1.4rem;
+            color: #22D3EE;
+            /* font-weight: 600; */
+         }
+          
+         input {
+            width: 90%;
+            background-color: #0d1117fd;
+             border: none;
+             outline: none;
+            color: white;
+         }
+
+    }
+    #msg{
+        height: 35%;
+        textarea{
+           
+             width: 90%;
+            height: 90%;
+            background-color: #0d1117fd;
+            border: none;
+             outline: none;
+            color: white;
+         }
+
+       
+    }
+
+   
+}
+ #btn{
+        color: black;
+           
+            background: linear-gradient(135deg, #22D3EE 0%, #ffffff 50%, #22D3EE 100%) !important;
+            i{
+                color: black;
+            }
+    }
+
+#btn:hover {
+  
+  cursor: pointer;
+ background: linear-gradient(135deg, #0679d0 0%, #ffffff 50%, #0679d0 100%) !important;
+   
+}

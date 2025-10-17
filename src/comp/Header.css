@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    background-color: #161B22;
+}
+/* html, body {
+  overflow-x: hidden;
+} */
+nav {
+    background-color: #0d1117fd;
+    /* color: #E5E7EB; */
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    height: 13vh;
+    width: 100%;
+    border-bottom: 1px solid rgba(34, 211, 238, 0.3);
+    border-bottom-left-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+    position: fixed;
+    z-index: 5;
+    
+}
+
+#logo {
+
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'poppins', sans-serif;
+    font-size: 2rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.248);
+}
+#j{
+    color : white;
+}
+#m{
+     background: linear-gradient(135deg, #22D3EE, #b513a0);
+  -webkit-background-clip: text; /* for Safari and Chrome */
+  -webkit-text-fill-color: transparent; /* makes the text show the gradient */
+  background-clip: text; /* for other browsers that support it */
+  color: transparent; /* fallback */
+}
+
+#logo:hover {
+    /* transform: rotate(360deg); */
+    transition: 0.01s;
+    font-size: 2.5rem;
+   font-weight: 100;
+   /* text-shadow:2px #f0f0f0; */
+   /* text-shadow: 2px 2px 2px rgba(78, 171, 171, 0.544); */
+}
+
+nav ul {
+    margin-top:0 ;
+    display: flex;
+    list-style: none;
+    min-width: 60vw;
+    margin-left: 10vw;
+    justify-content: space-around;
+/* align-items: center; */
+
+}
+
+nav ul li {
+    display: flex;
+    border-radius: 3vh;
+    align-items: center;
+    border: 1px solid black;
+    border: hidden;
+    position: relative;
+}
+
+
+nav ul li a {
+    color: rgb(176, 220, 239);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 1.5vh;
+    border: 1px solid transparent;
+}
+
+
+nav ul li a:hover {
+    color: white;
+    background-color: #0D1117;
+    border-radius: 3vh;
+    border: 1px solid #22D3EE;
+    cursor: pointer;
+    transform: scale(1.1);
+    /* background: linear-gradient(135deg, #22D3EE, #0D1117); */
+}
+
+
+li button {
+    /* background-color: #22D3EE; */
+    color: #0D1117;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 1.5vh 2vh;
+    border-radius: 4vh;
+    border: 1px solid #0D1117;
+    cursor: pointer;
+     /* background: linear-gradient(135deg, #22D3EE, white); */
+
+}
+
+
+nav ul li button:hover {
+   
+    cursor: pointer;
+    transform: scale(1.2);
+    /* background: linear-gradient(135deg, #22D3EE, #0D1117); */
+
+}
+
+/* Corrected CSS */
+nav ul li.active a {
+  color: black; /* Make active link fully white */
+  font-weight: bold;
+  transform: scale(1.1);
+  background-color: #0D1117; /* Same as hover background */
+  border-radius: 3vh;
+  border: 1px solid #22d3ee90;
+  background:linear-gradient(135deg, #22D3EE, #b513a0);
+}
+
+
