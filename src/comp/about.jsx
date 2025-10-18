@@ -75,8 +75,7 @@ internship.
         </div>
 
         <div className="right">
-          {/* Replace with your actual image */}
-          {/* <img src="me.jpeg" alt="Jenish Macwan" /> */}
+         
         </div>
       </div>
     </section>
