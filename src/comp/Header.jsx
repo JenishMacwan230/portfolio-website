@@ -1,3 +1,4 @@
+// ...existing code...
 import React, { useEffect, useState, useRef } from "react";
 
 export default function Header() {
@@ -5,65 +6,83 @@ export default function Header() {
   const observerRef = useRef(null);
 
   useEffect(() => {
-    // Select all elements that have an ID (div, section, etc.)
-    const sections = Array.from(document.querySelectorAll("[id]"));
-    console.log("[Header debug] Found sections:", sections.map(s => s.id));
+    // select only top-level <section id="..."> elements
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+
+    console.log("[Header debug] sections found:", sections.map(s => s.id));
 
     if (!sections.length) {
-      console.warn(
-        "[Header debug] No elements with IDs found! Add id='home', id='skills', etc. to your sections."
-      );
+      console.warn("[Header debug] No <section id=...> elements found");
       return;
     }
 
-    // Setup IntersectionObserver
-//   const observer = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         setActiveSection(entry.target.id);
-//       }
-//     });
-//   },
-//   {
-//     root: null,
-//    rootMargin: "-10% 0px -10% 0px", // Top relaxed, bottom very loose
-//       threshold: 0.1,
-//   }
-// );
-
-  const observer = new IntersectionObserver(
-  (entries) => {
-    // Find the entry closest to the top that is intersecting
-    let visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-
-    if (visible.length > 0) {
-      setActiveSection(visible[0].target.id);
+    // detect any nested elements with ids inside sections (helps debug)
+    const nestedIds = [];
+    sections.forEach((s) => {
+      Array.from(s.querySelectorAll("[id]")).forEach((el) => {
+        if (el !== s) nestedIds.push({ section: s.id, childId: el.id });
+      });
+    });
+    if (nestedIds.length) {
+      console.warn(
+        "[Header debug] Found nested ids inside sections. These can be picked up by observers or by other selectors and cause flicker:",
+        nestedIds
+      );
     }
-  },
-  {
-    root: null,
-    rootMargin: "0px 0px -45% 0px",
-    threshold: 0.1,
-  }
-);
 
+    const navEl = document.querySelector("nav");
+    const navHeight = navEl ? Math.round(navEl.getBoundingClientRect().height) : 0;
+    console.log("[Header debug] navHeight:", navHeight);
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // debug log
+        console.groupCollapsed("[Header debug] Intersection entries");
+        entries.forEach((e) =>
+          console.log(e.target.id, {
+            ratio: e.intersectionRatio,
+            intersecting: e.isIntersecting,
+            top: e.boundingClientRect.top.toFixed(1),
+          })
+        );
+        console.groupEnd();
 
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length === 0) return;
+
+        visible.sort((a, b) => {
+          if (b.intersectionRatio !== a.intersectionRatio) {
+            return b.intersectionRatio - a.intersectionRatio;
+          }
+          return a.boundingClientRect.top - b.boundingClientRect.top;
+        });
+
+        const newId = visible[0].target.id;
+        if (newId && newId !== activeSection) setActiveSection(newId);
+      },
+      {
+        root: null,
+        rootMargin: `-${navHeight}px 0px -35% 0px`,
+        threshold: [0.25, 0.5, 0.75, 1],
+      }
+    );
+
+    // observe only the section elements
     sections.forEach((section) => observer.observe(section));
     observerRef.current = observer;
 
-    // Cleanup
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
         observerRef.current = null;
       }
     };
-  }, []);
+  }, [activeSection]);
+  // ...existing code...
 
+// ...existing code...
+
+  // ...existing code...
   const handleNavClick = (e, id) => {
     e.preventDefault();
     const target = document.getElementById(id);
@@ -83,7 +102,8 @@ export default function Header() {
   ];
 
   return (
-    <nav>
+    // ...existing JSX...
+     <nav>
       <div id="logo">
         <div id="m">M</div>
         <div id="j">J</div>
@@ -101,12 +121,28 @@ export default function Header() {
           </li>
         ))}
 
-        {/* <li>
-          <button>
-            <i className="fa-solid fa-moon"></i>
-          </button>
-        </li> */}
+        {/* ...other nav items... */}
       </ul>
+
+      {/* Debug overlay: visible on screen to show current section */}
+      <div
+        style={{
+          position: "fixed",
+          right: 12,
+          bottom: 12,
+          background: "rgba(0,0,0,0.7)",
+          color: "white",
+          padding: "8px 12px",
+          borderRadius: 8,
+          zIndex: 9999,
+          fontFamily: "monospace",
+          fontSize: 12,
+        }}
+        aria-hidden="true"
+      >
+        Section: {activeSection}
+      </div>
     </nav>
   );
 }
+// ...existing code...

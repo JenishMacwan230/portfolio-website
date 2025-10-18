@@ -1,6 +1,6 @@
 
 
-export default function Projects(second) {
+export default function Projects() {
     return(
         <>
         <section id="projects">
