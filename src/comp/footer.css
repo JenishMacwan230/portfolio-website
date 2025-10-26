@@ -1,114 +1,245 @@
-footer{
-    margin-top: 10%;
-    
+footer {
+  margin-top: 10%;
+  color: #fff;
+  font-family: inherit;
 }
 
-#foot{
-    width: 100%;
-    height: 40vh;
-    /* border: 1px solid rgba(34, 211, 238, 0.3); */
-    border-top: 1px solid rgba(34, 211, 238, 0.3);
-    border-bottom:1px  solid rgba(34, 211, 238, 0.3);
-    /* background-color: aqua; */
+#foot {
+  width: 100%;
+  /* desktop height fallback */
+  min-height: 40vh;
+  border-top: 1px solid rgba(34, 211, 238, 0.3);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.3);
+  background-color: #0d1117fd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2.5rem 3rem;
+  box-sizing: border-box;
 }
 
-#foot{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: #0d1117fd;
+/* Column widths on desktop */
+#foot .first,
+#foot .second,
+#foot .third {
+  box-sizing: border-box;
+  color: white;
 }
 
-#foot ul{
-    margin-top: 5%;
-    display: flex;
-    height: 60%;
-    /* background-color: pink; */
+/* first column */
+#foot .first {
+  flex: 0 1 38%;
+  min-width: 220px;
+}
+
+#foot .first h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+#foot .first h1 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 0.7rem;
+}
+
+/* social icons row in first column */
+#foot .first .ic {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+/* circular icon links */
+#foot .first .ic a {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  aspect-ratio: 1/1;
+  font-size: 1.05rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  transition: transform .12s ease, background .12s ease;
+}
+#foot .first .ic a:hover {
+  transform: translateY(-3px);
+  background: rgba(34,211,238,0.06);
+}
+
+/* second column (quick links) */
+#foot .second {
+  flex: 0 1 18%;
+  min-width: 160px;
+}
+
+#foot .second h2 {
+  margin: 0 0 0.6rem 0;
+}
+
+#foot .second ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+#foot .second ul li a {
+  color: rgba(255, 255, 255, 0.58);
+  text-decoration: none;
+}
+#foot .second ul li a:hover {
+  color: #fff;
+  margin-left: 6px;
+}
+
+/* third column (info) */
+#foot .third {
+  flex: 0 1 22%;
+  min-width: 200px;
+}
+
+#foot .third h2 {
+  margin: 0 0 0.6rem 0;
+}
+
+#foot .third ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(255,255,255,0.58);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#foot .third ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+#foot .third ul li a {
+  color: rgba(255,255,255,0.58);
+  text-decoration: none;
+}
+
+/* copyright row */
+.cr {
+  padding: 15px;
+  display: flex;
+  color: white;
+  font-size: 0.9rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* small icon spacing in copyright */
+.cr i {
+  margin-right: 10px;
+}
+
+/* ----------------- Responsive: Tablets and Mobile ----------------- */
+
+/* Tablets and portrait laptops */
+@media (max-width: 900px) {
+  #foot {
     flex-direction: column;
-    justify-content: space-between;
-    
-}
+    align-items: center;
+    padding: 2rem 1.25rem;
+    gap: 1.25rem;
+    min-height: auto;
+  }
 
-#foot .first{
-    color: white;
-    h1{
-        margin-left: 20px;
-        color: rgba(255, 255, 255, 0.722);
-    }
-    .ic{
-        width: 40%;
-         margin-left: 20px;
-        display: flex;
-        justify-content: space-between;
-    }
-    a{  
-        margin-top: 15px;
-        display: flex;
-        width: 25%;
-        aspect-ratio: 1;
-        font-size: 1rem;
-        justify-content: center;
-        align-items: center;
-        border-radius:50% ;
-        border: 1px solid rgba(255, 255, 255, 0.568);
-    }
+  /* make each section full width and centered */
+  #foot .first,
+  #foot .second,
+  #foot .third {
+    width: 100%;
+    max-width: 920px;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
 
-}    
-
-#foot .first  .ic  i:hover{
-        cursor:pointer;
-         font-size: 1.5rem;
-         padding : 6px;
-    }
-
-
-    #foot .second{
-        h2{
-            margin-left: 0;
-        }
-        li a{
-            color: rgba(255, 255, 255, 0.534);
-        }
-        li :hover{
-            
-            color: white;
-            margin-left: 5px;
-            font-size: 1.1rem;
-        }
-    }
-
-#foot .third{
-    h2{
-        margin-left:0 ;
-    }
-    ul{
-       color: rgba(255, 255, 255, 0.534);
-       a{
-          color: rgba(255, 255, 255, 0.534);
-       }
-       height: 30%;
-    }
-   
-    i{
-        color: white;
-        margin-right: 15px;
-    }
-     li :hover{
-            
-            color: white;
-        
-        }
-}
-
-.cr{
-    padding: 15px;
-    display: flex;
-    color: white;
-    font-size: .9rem;
+  /* larger, centered social icons row */
+  #foot .first .ic {
     justify-content: center;
-    i{
-        margin-top: 5px;
-        margin-right: 15px;
-    }
-    
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+  #foot .first .ic a {
+    width: 54px;
+    height: 54px;
+    font-size: 1.15rem;
+  }
+
+  /* Quick links: convert to two columns if space allows */
+  #foot .second ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem 1.2rem;
+  }
+  #foot .second ul li {
+    width: auto;
+  }
+
+  /* Info list: center items and wrap nicely */
+  #foot .third ul {
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .cr {
+    font-size: 0.88rem;
+    padding-top: 8px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  #foot {
+    padding: 1.25rem 0.75rem;
+    gap: 0.9rem;
+  }
+
+  /* condense text sizes */
+  #foot .first h2 { font-size: 1.05rem; }
+  #foot .first h1 { font-size: 0.95rem; }
+
+  /* social icons slightly smaller but touch-friendly */
+  #foot .first .ic a {
+    width: 46px;
+    height: 46px;
+    font-size: 1.05rem;
+  }
+
+  /* Quick links: vertical stack for clarity on small phones */
+  #foot .second ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Info: reduce spacing */
+  #foot .third ul { gap: 0.45rem; }
+
+  .cr { font-size: 0.82rem; padding: 10px 0 18px 0; }
+}
+
+/* Final safety: prevent accidental horizontal overflow on tiny screens */
+@media (max-width: 360px) {
+  html, body {
+    overflow-x: hidden;
+  }
 }

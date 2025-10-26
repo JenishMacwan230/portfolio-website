@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-// ...existing code...
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
   const observerRef = useRef(null);
 
   useEffect(() => {
@@ -45,6 +45,17 @@ export default function Header() {
     };
   }, []);
 
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveSection(id);
+      // close mobile menu after navigation
+      setMenuOpen(false);
+    }
+  };
+
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
@@ -54,44 +65,34 @@ export default function Header() {
     { id: "contact", label: "Contact" },
   ];
 
-  // ...existing code...
-
-  const handleNavClick = (e, id) => {
-    e.preventDefault();
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      setActiveSection(id);
-    }
-  };
-
-  // ...existing code...
-
   return (
-    // ...existing JSX...
-     <nav>
+    <nav>
       <div id="logo">
         <div id="m">M</div>
         <div id="j">J</div>
       </div>
 
-      <ul>
+      {/* mobile toggle */}
+      <button
+        className={`nav-toggle ${menuOpen ? "open" : ""}`}
+        aria-label="Toggle menu"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((s) => !s)}
+      >
+        <span className="hamburger" />
+      </button>
+
+      <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
         {navItems.map((item) => (
-          <li
-            key={item.id}
-            className={activeSection === item.id ? "active" : ""}
-          >
+          <li key={item.id} className={activeSection === item.id ? "active" : ""}>
             <a href={`#${item.id}`} onClick={(e) => handleNavClick(e, item.id)}>
               {item.label}
             </a>
           </li>
         ))}
 
-        {/* ...other nav items... */}
+       
       </ul>
-
-      {/* debug overlay removed */}
     </nav>
   );
 }
-// ...existing code...

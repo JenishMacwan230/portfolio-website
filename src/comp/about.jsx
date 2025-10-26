@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function About() {
   const [activeButton, setActiveButton] = useState(0);
 
-  const buttons = ["About Me", "Experience"];
+  const buttons = ["About", "Experience"];
   const icons = [
     <i className="fa-solid fa-image-portrait" key="icon1"></i>,
     <i className="fa-solid fa-puzzle-piece" key="icon2"></i>,
@@ -58,6 +58,7 @@ internship.
   return (
     <section id="about">
       <div className="main">
+       
         <div className="left">
           <div className="headbutton">
             {buttons.map((btn, index) => (

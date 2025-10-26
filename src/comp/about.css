@@ -1,111 +1,374 @@
-#about .left{
-    margin: 5%;
-     width: 60%;;
-     height: 80%;
-     /* border: 1px solid white; */
-     border-radius: 10px;
-      /* background: #0D1117; */
+#about{
+  margin-top: 7%;
+  padding-top: 5%;
 }
 
-#about .right{
-    margin : 5% 5% 5% 0;
-    height: 80%;
-    width: 25%;
-    background: url("/public/me.jpeg");
-    /* background: #0D1117; */
-    border-radius: 5px;
-   border: 1px solid #22d3ee81;
-    background-size: cover;
+
+#about .left {
+  margin: 5%;
+  width: 60%;
+  height: 80%;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
-.headbutton{
-    display: flex;
+#about .right {
+  margin: 5% 5% 5% 0;
+  height: 80%;
+  width: 25%;
+  background: url("/public/me.jpeg") center/cover no-repeat;
+  border-radius: 5px;
+  border: 1px solid #22d3ee81;
+  box-sizing: border-box;
+}
+
+/* Head buttons row (About Me / Experience) */
+.headbutton {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center; /* center the two buttons */
+  flex-wrap: nowrap;       /* keep them side-by-side */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Buttons styling */
+.headbutton button {
+  flex: 0 1 calc(50% - 0.3rem); /* two equal columns with gap accounted */
+  min-width: 120px;
+  max-width: 420px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.headbutton button i {
+  margin-right: 0.4rem;
+}
+
+/* fallback for very narrow devices: stack if there's no room */
+@media (max-width: 340px) {
+  .headbutton {
     flex-wrap: wrap;
-    height: 10%;
-   justify-content: space-between;
-    /* background-color:  #161B22; */
-    button{
-        i{
-            margin-right: 5%;
-        }
-        align-items: center;
-        width: 49%;
-        border-radius: 5px;
-        color: rgba(198, 243, 238, 0.818);
-        font-size: 1.2rem;
-        font-weight: 500;
-        background-color:  #0D1117;
-        border: 1px solid #22d3ee81;
-        cursor: pointer;
-    }
+  }
+  .headbutton button {
+    flex: 1 1 100%;
+    width: 100%;
+  }
 }
 
+/* active state for the head buttons */
 #about .active {
-    background: linear-gradient(135deg, #22D3EE, #b513a0);
-    border: none;
-    color: #0D1117;
-    /* font-weight: 900; */
+  background: linear-gradient(135deg, #22D3EE, #b513a0);
+  border: none;
+  color: #0D1117;
 }
 
-.content{
-    margin-top: 2%;
-    /* padding: % 0 0 15px; */
-    height: 85%;
-    background-color: #0D1117;;
-    border-radius: 5px ;
-    border: 1px solid #22d3ee81;
-    color: white;
-
-    h1{
-        margin: 2% 0 0 5%;
-
-        font-size: 2.5rem;
-    }
-
-    h2{
-         margin: 1% 0 0 5%;
-
-    }
-    h3{
-         margin: 1% 0 0 5%;
-    }
-    p{
-       margin: 1% 0 0 5%;
-        font-weight: 500;
-        color:  white;
-    }
-    a{
-        color: rgb(135, 213, 247); ;
-    }
+/* Content area */
+.content {
+  margin-top: 2%;
+  height: 85%;
+  background-color: #0D1117;
+  border-radius: 5px;
+  border: 1px solid #22d3ee81;
+  color: white;
+  box-sizing: border-box;
+  padding-bottom: 1rem;
 }
 
-
-ul{
-    margin-top: 5vh;
-    justify-content: center;
+.content h1 {
+  margin: 2% 0 0 5%;
+  font-size: 2.5rem;
 }
 
-#about li{
+.content h2 {
+  margin: 1% 0 0 5%;
+}
+
+.content h3 {
+  margin: 1% 0 0 5%;
+}
+
+.content p {
+  margin: 1% 0 0 5%;
+  font-weight: 500;
+  color: white;
+}
+
+.content a {
+  color: rgb(135, 213, 247);
+}
+
+/* Download CV / Let's Connect buttons (styled like pill buttons) */
+.content .cv {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 5%;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.content .cv li {
+  background: transparent;
+  border: 1px solid rgba(34, 211, 238, 0.745);
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.content .cv li a {
+  color: rgb(135, 213, 247);
+  text-decoration: none;
+}
+
+/* action list */
+ul {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#about li {
+  display: flex;
+  height: 5vh;
+  width: 10vw;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style-type: none;
+  border-radius: 5px;
+  border: 1px solid rgba(34, 211, 238, 0.745);
+  justify-content: center;
+  align-items: center;
+}
+
+#about li:hover {
+  background: linear-gradient(135deg, #22D3EE, #b513a0);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+#about li:hover a {
+  color: #161B22;
+}
+
+/* ---------- Responsive: tablets & phones (override desktop only) ---------- */
+
+/* Tablet / small laptop: stack content, avatar centered on top, buttons inline */
+@media (max-width: 900px) {
+  /* stack main content vertically and center */
+  #about .main {
     display: flex;
-    height: 5vh;
-    width: 10vw;
-    /* background-color: #E5E7EB; */
-    font-size: 1rem;
-    font-weight: 500;
-    list-style-type: none;
-    border-radius: 5px;
-    border: 1px solid  rgba(34, 211, 238, 0.745);
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    
-}
-#about li:hover{
-    background: linear-gradient(135deg, #22D3EE, #b513a0);
-    font-weight: 700;
-    cursor:  pointer ;
+    gap: 1rem;
+    width: 92%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    box-sizing: border-box;
+  }
+
+  /* move image to the top and make it larger square */
+  #about .right {
+    order: -1; /* place before .left */
+    margin: 0 auto 1rem;
+    width: 220px;
+    height: 220px;
+    border-radius: 8px; /* slight rounding for square */
+    background-size: cover;
+    background-position: center;
+    border: none; /* remove border on mobile/tablet */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  /* left becomes full width stacked section; remove inner borders */
+  #about .left {
+    width: 100%;
+    margin: 0 auto;
     border: none;
-    a{
-       color: #161B22; 
-    }
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .content {
+    margin-top: 0.6rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+  }
+
+  /* head buttons stay side-by-side but centered */
+  .headbutton {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .headbutton button {
+    width: 48%;
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  /* CV / connect buttons adapt */
+  .content .cv {
+    justify-content: center;
+  }
+
+  /* reduce action list item width on tablets */
+  #about li {
+    width: auto;
+    min-width: 120px;
+  }
+}
+
+/* Phones (portrait): square image top, stacked buttons and compact content */
+@media (max-width: 480px) {
+  #about .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    width: 94%;
+    margin: 0 auto;
+    padding: 0.6rem 0;
+    box-sizing: border-box;
+  }
+
+  #about .right {
+    order: -1;
+    width: 180px;
+    height: 180px;
+    border-radius: 8px; /* square with slight rounding */
+    margin: 0 auto 0.8rem;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  #about .left {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  .content {
+    margin-top: 0.5rem;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 8px;
+  }
+
+  /* stack head buttons */
+  .headbutton {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: stretch;
+  }
+
+  .headbutton button {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+
+  /* CV / connect buttons stack full width */
+  .content .cv {
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .content .cv li {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+  }
+
+  /* action list becomes vertical and full width */
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 0;
+    margin-top: 1.2rem;
+  }
+
+  #about li {
+    width: 94%;
+    max-width: 420px;
+    min-width: 0;
+    height: auto;
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  /* prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* Ensure head buttons stay side-by-side with borders on all devices */
+.headbutton {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;       /* keep them on one row */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Buttons: equal width, visible border */
+.headbutton button {
+  flex: 0 0 48%;               /* two equal buttons per row */
+  min-width: 120px;
+  max-width: 420px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid rgba(34, 211, 238, 0.745); /* visible border */
+  color: rgba(198, 243, 238, 0.95);
+  font-weight: 500;
+}
+
+/* Keep side-by-side on tablets and phones too */
+@media (max-width: 900px) {
+  .headbutton {
+    flex-direction: row !important;
+    gap: 0.6rem;
+  }
+  .headbutton button {
+    flex: 0 0 48%;
+    width: 48%;
+  }
+}
+
+/* Very narrow screens: allow shrinking but keep border and two-per-row if possible */
+@media (max-width: 340px) {
+  .headbutton {
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+  }
+  .headbutton button {
+    flex: 0 1 48%;
+    min-width: 0;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.95rem;
+  }
 }
 

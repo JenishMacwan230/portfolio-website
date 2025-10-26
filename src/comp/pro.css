@@ -1,105 +1,224 @@
-
 #projects {
-    margin-top: 5%;
-    padding-top: 8%;
-   
+  margin-top: 6%;
+  padding-top: 2%;
 }
 
-
-#pm2{
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    width: 85vw;
-    min-height: 65vh;
-    /* background-color: yellow; */
-    /* border: 1px solid orange; */
-    justify-content: space-evenly;
-
-   
+#pm2 {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 85vw;
+  min-height: 65vh;
+  justify-content: space-evenly;
 }
 
-
-.temp{
-   position: relative;
-   
-   margin: 10px;
-   margin-bottom: 20px;
-    width: 30%;
-    height: 63vh;
-    border-radius: 10px;
-     border: 1px solid rgba(34, 211, 238, 0.3);
-    background-color: #0d1117fd;
+/* Project Card */
+.temp {
+  position: relative;
+  margin: 10px;
+  margin-bottom: 20px;
+  width: 30%;
+  height: 63vh;
+  border-radius: 10px;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  background-color: #0d1117fd;
 }
 
-.imgp{
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    aspect-ratio: 16/8;
-    background-size: cover;
-    /* background-color: blue; */
-}
-h2{
-    margin-left: 20px;
+.imgp {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  aspect-ratio: 16/8;
+  background-size: cover;
 }
 
-.temp p{
-      
-    margin: 15px;
-    color: white;
-    margin-left: 20px;
-      margin-top: 25px;
+h2 {
+  margin-left: 20px;
 }
 
-.temp ul{
+.temp p {
+  margin: 15px 20px;
+  color: white;
+  margin-top: 25px;
+}
 
-    margin: 15px;
-    margin-left: 20px;
-    list-style: none;
-   
+.temp ul {
+  margin: 15px 20px;
+  list-style: none;
 }
 
 .tech {
-     justify-content: left;
-    li{
-        font-size: .9rem;
-       
-           background: linear-gradient(135deg, #b11c9dcc 0%, #ffffff 50%, #b11c9dcc 100%) !important;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 1px;
-        padding-bottom: 1px;
-        border-radius: 5px;
-        margin-right: 10px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.tech li {
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #b11c9dcc 0%, #ffffff 50%, #b11c9dcc 100%);
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .live {
-    position: absolute;
-   
-     bottom: 0;
-    li{
-        
-        font-size: 1.2rem;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        border-radius: 5px;
-        background: linear-gradient(135deg, #22D3EE 0%, #ffffff 50%, #22D3EE 100%) ;
-        margin-left: 35px;
-       
-    }
-    a{
-         color: black;
-    }
-
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.live li {
+  font-size: 1.1rem;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #22d3ee 0%, #ffffff 50%, #22d3ee 100%);
+}
+.live a {
+  color: black;
 }
 
-#tictac{
-    .imgp{
-        background-image: url(/public/tictactoe.png);
-        
+/* Tic Tac Toe Preview */
+#tictac .imgp {
+  background-image: url(/public/tictactoe.png);
+}
+
+/* 🌐 Responsive Design */
+/* 📱 Tablet (≤1024px) */
+@media (max-width: 1024px) {
+    #pm2 {
+        width: 90vw;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .temp {
+        width: 45%;
+        height: auto; 
+        margin: 10px;
+    }
+
+    .imgp {
+        aspect-ratio: 16/8;
+    }
+
+    /* Keep tech list horizontal */
+    .tech {
+        display: flex;
+        flex-wrap: nowrap; /* prevent vertical stacking */
+        gap: 10px;
+        margin-left: 20px;
+        overflow-x: auto;
+    }
+
+    /* Keep live buttons horizontal */
+    .live {
+        display: flex;
+        flex-wrap: nowrap; /* prevent vertical stacking */
+        justify-content: flex-start;
+        gap: 10px;
+        position: relative;
+        bottom: 0;
+        margin: 10px 0 15px 20px;
+        overflow-x: auto;
+    }
+}
+
+/* 📱 Mobile Landscape (≤768px) */
+@media (max-width: 768px) {
+    #pm2 {
+        flex-direction: column;
+        align-items: center;
+        width: 95vw;
+    }
+
+    .temp {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+        border: none; 
+         ul{
+            width: auto;
+        display: flex;
+       
+        }
+    }
+   
+
+    .tech {
+        display: flex;
+        flex-wrap: nowrap; /* keep horizontal */
+        gap: 8px;
+        margin-left: 20px;
+        overflow-x: auto;
+    }
+
+    .live {
+        display: flex;
+        flex-wrap: nowrap; /* keep horizontal */
+        justify-content: flex-start;
+        gap: 10px;
+        position: relative;
+        bottom: 0;
+        margin: 10px 0 15px 20px;
+        overflow-x: auto;
+    }
+}
+
+/* 📱 Mobile Portrait (≤480px) */
+@media (max-width: 480px) {
+    #pm2 {
+        flex-direction: column;
+        align-items: center;
+        width: 95vw;
+    }
+
+    .temp {
+        width: 95%;
+        height: auto;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    .tech {
+        display: flex;
+        flex-wrap: nowrap; /* keep horizontal */
+        gap: 5px;
+        margin-left: 15px;
+        font-size: 0.85rem;
+        overflow-x: auto;
+    }
+
+    .live {
+        display: flex;
+        flex-wrap: nowrap; /* keep horizontal */
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 10px 0 15px 15px;
+        overflow-x: auto;
+    }
+
+    .live li {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+}
+
+/* 📱 Extra Small (≤360px) */
+@media (max-width: 360px) {
+    .temp {
+        width: 100%;
+    }
+
+    .tech li {
+        font-size: 0.8rem;
+        padding: 4px 6px;
+    }
+
+    .live li {
+        font-size: 0.85rem;
+        padding: 4px 6px;
     }
 }

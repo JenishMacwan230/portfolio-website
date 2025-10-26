@@ -1,34 +1,32 @@
-
 section {
-    padding-top: 12%;
-    width: 100%;
-    min-height: 70vh;
-    /* max-height: 80vh; */
-    display: flex;
-    justify-content: center;
-    background-color: #161B22;
-
+  padding-top: 12%;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  background-color: #161B22;
 }
 
+/* Base container */
 .main {
-    /* margin-top: 30vmin; */
-    display: flex;
-    height: 65vh;
-    width: 85vw;
-    border-radius: 10px;
-    border: 1px solid rgb(34, 211, 238, .3);
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+  width: 85vw;
+  border-radius: 10px;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  transition: all 0.3s ease;
 }
 
-
-
+/* Left Section (Image) */
 #home .left {
-  margin-left: 5%;
+  /* margin-left: %; */
   margin-right: 8%;
   display: inline-block;
-  border-radius: 50%; 
-  padding: 2vmin;     /* border thickness */
-  background: #161B22;  /* default background (no gradient) */
+  border-radius: 50%;
+  padding: 2vmin;
+  background: #161B22;
   transition: background 0.8s ease;
 }
 
@@ -41,82 +39,292 @@ section {
   height: 50vmin;
   width: 50vmin;
   object-fit: cover;
-  border-radius: 50%; 
+  border-radius: 50%;
   background: #161B22;
 }
 
-
+/* Right Section (Text) */
 #home .right {
-  
-    display: block;
-    height: 55vmin;
-    width: 85vmin;
-    position: relative;
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: #E5E7EB ;
-    /* background-color: pink; */
+  display: block;
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #E5E7EB;
+  height: 55vmin;
+  width: 85vmin;
 }
 
+.hi {
+  font-size: 2rem;
+}
 
-.name{
+.name {
+  font-size: 5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #22D3EE, #b513a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+#home .right span {
+  font-size: 3rem;
+}
+
+#home .right .line {
+  margin-top: 1vh;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+ul {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#home li {
+  display: flex;
+  height: 5vh;
+  width: 10vw;
+  font-size: 1rem;
+  font-weight: 500;
+  list-style-type: none;
+  border-radius: 5px;
+  border: 1px solid rgba(34, 211, 238, 0.745);
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+#home li:hover {
+  background: linear-gradient(135deg, #22D3EE, #b513a0);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+#home li:hover a {
+  color: #161B22;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ------------------------------ */
+/* RESPONSIVE DESIGN BELOW */
+/* ------------------------------ */
+
+/* 📱 Tablet screens */
+@media (max-width: 1024px) {
+  section {
+    padding-top: 25%;
+  }
+
+  .main {
+    flex-direction: column;
+    height: auto;
+    padding: 5vh 0;
+  }
+
+  #home .left {
    
-    font-size: 5rem;
-    font-weight: 700;
-      background: linear-gradient(135deg, #22D3EE, #b513a0);
-  -webkit-background-clip: text; /* for Safari and Chrome */
-  -webkit-text-fill-color: transparent; /* makes the text show the gradient */
-  background-clip: text; /* for other browsers that support it */
-  color: transparent; /* fallback */
+    margin: 0;
+  }
+
+  #home .left img {
+    height: 40vmin;
+    width: 40vmin;
+  }
+
+  #home .right {
+    text-align: center;
+    width: 90%;
+    height: auto;
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  #home .right span {
+    font-size: 2rem;
+  }
+
+  ul {
+    justify-content: center;
+    gap: 3vw;
+  }
+
+  #home li {
+    width: 25vw;
+    height: 6vh;
+  }
 }
 
-#home .right span{
-    font-size: 3rem;
-}
+/* 📱 Mobile screens */
+@media (max-width: 768px) {
+  section {
+    padding-top: 25%;
+  }
 
-#home .right .line{
-    margin-top: 1vh;;
-    font-size: 1rem;
-    font-weight: 400;
-}
+  .main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 95vw; 
+    padding: 5vh 5vw;
+    border-radius: 12px;
+  }
 
-ul{
-    margin-top: 5vh;
+  #home .left {
+    margin: 0;
     display: flex;
-    justify-content: space-around;
-}
-
-#home li{
-    display: flex;
-    height: 5vh;
-    width: 10vw;
-    /* background-color: #E5E7EB; */
-    font-size: 1rem;
-    font-weight: 500;
-    list-style-type: none;
-    border-radius: 5px;
-    border: 1px solid  rgba(34, 211, 238, 0.745);
     justify-content: center;
     align-items: center;
-    
+  }
+
+  #home .left img {
+    height: 50vmin;
+    width: 50vmin;
+    max-width: 230px;
+    max-height: 230px;
+  }
+
+  #home .right {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 2vh;
+  }
+
+  .hi {
+    font-size: 1.2rem;
+  }
+
+  .name {
+    font-size: 2.6rem;
+    line-height: 1.2;
+  }
+
+  #home .right span {
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  #home .right .line {
+    font-size: 0.95rem;
+    margin: 1rem auto;
+    max-width: 90%;
+    line-height: 1.4;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 3vh;
+    width: 100%;
+  }
+
+  #home li {
+    width: 80%;
+    height: auto;
+    min-height: 45px;
+    font-size: 1rem;
+    padding: 0.8rem 0;
+  }
 }
-#home li:hover{
-    background: linear-gradient(135deg, #22D3EE, #b513a0);
-    font-weight: 700;
-    cursor:  pointer ;
-    border: none;
-    a{
-       color: #161B22; 
-    }
+
+
+
+/* 📱 iPhone / Extra small devices */
+@media (max-width: 480px) {
+  /* make page fit viewport, avoid >100vw which causes overflow */
+  html, body {
+    overflow-x: hidden; /* prevent horizontal scroll from accidental large widths */
+  }
+
+  #home {
+    width: 100%;
+    height: 90vh;
+    padding-top: 20vh;
+    box-sizing: border-box;
+
+  }
+
+  .main {
+    width: 94%;
+    max-width: 420px;     /* keeps layout compact on portrait phones */
+    padding: 4vh 4vw;
+    margin: 0 auto;       /* center the main container */
+    border-radius: 10px;
+    height: 90%;
+  }
+
+  /* avatar container: fixed sensible size, centered */
+  #home .left {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    padding: 6px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #161B22;
+  }
+
+  #home .left img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .name {
+    font-size: 2.2rem;
+  }
+
+  #home .right {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1.2rem;
+    width: 100%;
+  }
+
+  #home .right span {
+    font-size: 1.2rem;
+  }
+
+  #home .right .line {
+    font-size: 0.95rem;
+    max-width: 95%;
+    margin: 0.6rem auto;
+  }
+
+  ul {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.9rem;
+    align-items: center;
+    margin-top: 3vh;
+  }
+
+  #home li {
+    width: 92%;
+    min-height: 44px;
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+  }
 }
-a{ 
-    color: white;
-    text-decoration: none;
-}
-
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 #education{
     margin-top: 7%;
-   padding-top: 8%;
+   padding-top: 2%;
    justify-content: center;
    
 }
@@ -97,3 +97,99 @@ h3{
     color: white;
 }
 
+
+
+/* 📱 Tablet and smaller screens */
+@media (max-width: 1024px) {
+  #education {
+    margin-top: 10%;
+    padding-top: 12%;
+  }
+
+  .m2 {
+    width: 95%;
+    border: 1px solid rgba(34, 211, 238, 0.3);
+  }
+
+  #edu {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .clg {
+    width: 85%;
+    border: 1px solid #22d3ee81;
+  }
+
+  .img {
+    height: 25vh;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .des {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+/* 📱 Mobile Portrait */
+@media (max-width: 480px) {
+  .m2 {
+    width: 100%;
+    border: 1px solid #22d3ee81;
+    margin: 2.5%;
+  }
+
+  #edu {
+    gap: 2rem;
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+
+  .clg {
+    width: 90%;
+    border: 1px solid #22d3ee81; /* keep borders for each card */
+  }
+
+  .img {
+    height: 22vh;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3,
+  .des {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Extra Small (≤360px) */
+@media (max-width: 360px) {
+  .clg {
+    width: 95%;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3,
+  .des {
+    font-size: 0.85rem;
+  }
+
+  .m2 {
+    border: 1px solid #22d3ee81; /* ✅ ensure it's gone on tiny screens too */
+  }
+}

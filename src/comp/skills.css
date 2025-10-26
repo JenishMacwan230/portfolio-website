@@ -1,5 +1,6 @@
 #skills {
-    padding-top: 10%;
+    margin-top: 7%;
+  padding-top: 2%;
     width: 100%;
     height: 80vh;
     display: flex;
@@ -135,4 +136,196 @@ height: 70vh;
 .fill {
     height: 100%;
     background: linear-gradient(135deg, #22D3EE, #b513a0);
+}
+/* 📱 Tablet (≤1024px) */
+@media (max-width: 1024px) {
+    #skills {
+        height: auto;
+        padding-top: 8%;
+        padding-bottom: 5%;
+    }
+
+    #skills .main {
+        width: 90%;
+        height: auto;
+        padding-bottom: 4vh;
+    }
+
+    #skills .main .fline {
+        font-size: 1.8rem;
+    }
+
+    #skills .main .sline {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .typ {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap; /* ✅ Keep buttons in one line */
+        width: 100%;
+        gap: 10px;
+        margin-top: 4vh;
+    }
+
+    .typ button {
+        flex: 1;
+        font-size: 1rem;
+        padding: 1vh 0;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .skills-grid {
+        width: 90%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .data {
+        width: 30%;
+        min-width: 220px;
+        height: auto;
+        padding: 15px 0;
+        font-size: 1.1rem;
+    }
+}
+
+/* 📱 Mobile Landscape (≤768px) */
+@media (max-width: 768px) {
+    #skills {
+        padding-top: 15%;
+        height: auto;
+        padding-bottom: 5%;
+    }
+
+    #skills .main {
+        width: 92%;
+        height: auto;
+    }
+
+    #skills .main .fline {
+        font-size: 1.6rem;
+    }
+
+    #skills .main .sline {
+        font-size: 0.9rem;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .typ {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        gap: 6px;
+        overflow-x: auto; /* ✅ Enable horizontal scroll if needed */
+        scrollbar-width: none;
+    }
+
+    .typ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .typ button {
+        flex: 1;
+        font-size: 0.9rem;
+        padding: 10px 0;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .skills-grid {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .data {
+        width: 45%;
+        min-width: 180px;
+        font-size: 1rem;
+        height: auto;
+        padding: 10px 0;
+    }
+}
+
+/* 📱 Mobile Portrait (≤480px) */
+@media (max-width: 480px) {
+    #skills {
+        padding-top: 25%;
+        height: auto;
+        padding-bottom: 10%;
+    }
+
+    #skills .main {
+        width: 95%;
+        height: auto;
+    }
+
+    #skills .main .fline {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 2vh;
+    }
+
+    #skills .main .sline {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 2vh;
+    }
+
+    .typ {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: 4px;
+        overflow-x: auto; /* ✅ scrolls if needed */
+        scrollbar-width: none;
+    }
+
+    .typ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .typ button {
+        flex: 1;
+        font-size: 0.8rem;
+        padding: 8px 0;
+        margin: 0 2px;
+        white-space: nowrap;
+    }
+
+    .skills-grid {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .data {
+        width: 85%;
+        height: auto;
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+
+    .dn i {
+        font-size: 1.2rem;
+    }
+}
+
+/* 📱 Extra Small (≤360px) */
+@media (max-width: 360px) {
+    .typ button {
+        font-size: 0.75rem;
+        padding: 6px 0;
+    }
+
+    .data {
+        width: 90%;
+    }
 }
